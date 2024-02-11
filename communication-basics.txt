@@ -1,0 +1,13 @@
+Mode: RTU Mode (ASCII is not supported)
+
+Coding System: 8–bit binary, hexadecimal 0–9, A–F
+Two hexadecimal characters (bytes) contained in each 8–bit field of the message
+
+Bits per Byte: 1 start bit
+8 data bits, least significant bit sent first
+No parity (default) 1 parity bit: even or odd parity (programmable)
+1 stop bit (default) 2 stop bit (programmable) (Class.Group-version 5.21-XX.XX and 5.24-XX.XX)
+
+Error Check Field: 2 Byte Cyclical Redundancy Check (CRC)
+
+Baudrate: programmable 9’600baud (default) or 115’200baud
