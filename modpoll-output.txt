@@ -1,0 +1,35 @@
+(env) pi@vv7:~/depthsen $ modpoll --rtu /dev/ttyACM0 --rtu-baud 9600 --config keller-sensor.csv -1 --loglevel DEBUG
+
+modpoll - A New Command Line Tool for Modbus
+
+2024-02-11 21:11:13,644 | I | modpoll.main | No MQTT host specified, skip MQTT setup.
+2024-02-11 21:11:13,644 | I | modpoll.modbus_task | Loading config from: keller-sensor.csv
+2024-02-11 21:11:13,645 | I | modpoll.modbus_task | Adding new device testdev01
+2024-02-11 21:11:13,645 | I | modpoll.modbus_task | Add poller (start_address=0, size=12) to device testdev01
+2024-02-11 21:11:13,645 | D | modpoll.modbus_task | Add reference Calculated_value to device testdev01
+2024-02-11 21:11:13,645 | D | modpoll.modbus_task | Add reference Pressure_of_sensor1 to device testdev01
+2024-02-11 21:11:13,645 | D | modpoll.modbus_task | Add reference Pressure_of_sensor2 to device testdev01
+2024-02-11 21:11:13,646 | D | modpoll.modbus_task | Add reference Temperature to device testdev01
+2024-02-11 21:11:13,646 | D | modpoll.modbus_task | Add reference Temperature_of_sensor1 to device testdev01
+2024-02-11 21:11:13,646 | D | modpoll.modbus_task | Add reference Temperature_of_sensor2 to device testdev01
+2024-02-11 21:11:13,646 | I | modpoll.modbus_task | Polling 1 device(s)...
+2024-02-11 21:11:13,646 | I | modpoll.main |  ====== modpoll polling at rate:5.0s, actual:5.0s ======
+2024-02-11 21:11:13,646 | D | modpoll.modbus_task | Master connected. Delay of 0 seconds.
+2024-02-11 21:11:13,647 | D | modpoll.modbus_task | Polling device testdev01 ...
+2024-02-11 21:11:13,647 | D | pymodbus.logging | Current transaction state - IDLE
+2024-02-11 21:11:13,647 | D | pymodbus.logging | Running transaction 1
+2024-02-11 21:11:13,647 | D | pymodbus.logging | SEND: 0x1 0x3 0x0 0x0 0x0 0xc 0x45 0xcf
+2024-02-11 21:11:13,647 | D | pymodbus.logging | Resetting frame - Current Frame in buffer -
+2024-02-11 21:11:13,647 | D | pymodbus.logging | New Transaction state "SENDING"
+2024-02-11 21:11:13,647 | D | pymodbus.logging | Changing transaction state from "SENDING" to "WAITING FOR REPLY"
+2024-02-11 21:11:13,673 | D | pymodbus.logging | Changing transaction state from "WAITING FOR REPLY" to "PROCESSING REPLY"
+2024-02-11 21:11:13,673 | D | pymodbus.logging | RECV: 0x1 0x83 0x2 0xc0 0xf1
+2024-02-11 21:11:13,673 | D | pymodbus.logging | Processing: 0x1 0x83 0x2 0xc0 0xf1
+2024-02-11 21:11:13,673 | D | pymodbus.logging | Getting Frame - 0x83 0x2
+2024-02-11 21:11:13,673 | D | pymodbus.logging | Factory Response[131]
+2024-02-11 21:11:13,673 | D | pymodbus.logging | Frame advanced, resetting header!!
+2024-02-11 21:11:13,673 | D | pymodbus.logging | Adding transaction 1
+2024-02-11 21:11:13,673 | D | pymodbus.logging | Getting transaction 1
+2024-02-11 21:11:13,673 | D | pymodbus.logging | Changing transaction state from "PROCESSING REPLY" to "TRANSACTION_COMPLETE"
+2024-02-11 21:11:13,673 | E | modpoll.modbus_task | Reading device:testdev01, FuncCode:3, Start_address:0, Size:12... ERROR
+2024-02-11 21:11:13,673 | D | modpoll.modbus_task | Exception Response(131, 3, IllegalAddress)
